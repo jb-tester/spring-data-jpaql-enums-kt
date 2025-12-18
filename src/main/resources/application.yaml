@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: spring-data-jpaqa-enums-kt
+  datasource:
+    url: jdbc:mysql://localhost:3306/enums
+    username: irina
+    password: jolt
