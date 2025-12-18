@@ -48,6 +48,10 @@ interface IssuesRepository : CrudRepository<Issues, Long> {
     @Query("select issue from Issues issue where issue.type in (2, 0)")
     fun findByTypeInAsNumEnumLiteralNumber(): MutableList<Issues?>?
 
+    // incorrect query: value is used instead of index
+    // https://youtrack.jetbrains.com/issue/IDEA-383704/JPA-QL-no-errors-are-reported-if-the-enum-literal-that-uses-standard-mapping-is-referenced-by-value
+   //  @Query("select issue from Issues issue where issue.type = 'Bug'")
+   //  fun findByTypeAsNumEnumLiteralValue(): MutableList<Issues?>?
 
     // use static fields:
     @Query("select issue from Issues issue where issue.author = com.mytests.spring.springdatajpaqaenumskt.enumLiteralsInQueries.Issues.AUTHOR1")
