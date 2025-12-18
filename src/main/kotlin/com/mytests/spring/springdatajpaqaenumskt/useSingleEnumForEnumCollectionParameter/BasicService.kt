@@ -8,6 +8,11 @@ class BasicService(private val basicEntityRepo: BasicEntityRepo) {
     fun displayBasicResults() {
         println("====== BasicResults =====")
         basicEntityRepo.someQuery().forEach(Consumer { x: BasicResult? -> println(x) })
-        println("===================")
+    }
+    fun useElementCollectionEnums(){
+        println("====== ElementCollectionEnums: use literal value =====")
+        basicEntityRepo.elementCollectionTest1().forEach(Consumer { x: BasicEntity? -> println(x) })
+        println("====== ElementCollectionEnums: use enum fqn and short name =====")
+        basicEntityRepo.elementCollectionTest2().forEach(Consumer { x: BasicEntity? -> println(x) })
     }
 }

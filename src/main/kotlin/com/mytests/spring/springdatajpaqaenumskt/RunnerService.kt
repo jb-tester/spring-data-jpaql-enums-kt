@@ -22,6 +22,7 @@ class RunnerService {
             fruitService.getFruitByType()
             println("--------------------------------------")
             basicService.displayBasicResults()
+            basicService.useElementCollectionEnums()
             println("--------------------------------------")
             issuesService.findByAuthors()
             issuesService.findByPriorities()

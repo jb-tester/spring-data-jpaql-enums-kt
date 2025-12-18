@@ -15,7 +15,7 @@ class BasicEntity {
     @GeneratedValue
     var id: Long? = null
 
-    @ElementCollection
+    @ElementCollection(targetClass = Test::class, fetch = jakarta.persistence.FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     var testSet: MutableSet<Test?> = HashSet<Test?>()
 
